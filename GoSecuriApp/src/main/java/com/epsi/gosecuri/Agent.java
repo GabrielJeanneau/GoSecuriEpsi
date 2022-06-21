@@ -45,7 +45,7 @@ public class Agent {
         String res = "";
           try{
                 //Récupération du template html
-                String htmlString = Files.readString(Path.get(this.htmlDirPath+"agentFileBody.html"));
+                String htmlString = Files.readString(Paths.get(this.htmlDirPath+"agentFileBody.html"));
 
                 //Initialisation des variables avec le contenu à ajouter
                 String identity = this.getIdentity();
