@@ -43,9 +43,10 @@ public class Agent {
     
     public String generateAgentFile(){
         String res = "";
+        Generator generator = new Generator();
           try{
                 //Récupération du template html
-                String htmlString = Files.readString(Paths.get(this.htmlDirPath+"agentFileBody.html"));
+                String htmlString = generator.getFileContent(this.htmlDirPath+"agentFileBody.html");
 
                 //Initialisation des variables avec le contenu à ajouter
                 String identity = this.getIdentity();
