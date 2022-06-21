@@ -86,7 +86,7 @@ public class Generator {
             //File htmlTemplateFile = new File(this.htmlDirPath+"template.html");
             //String htmlString = FileUtils.readFileToString(htmlTemplateFile);
             //Path file = Paths.get(this.htmlDirPath+"template.html");
-            String htmlString = Files.readString(getFileContent(this.htmlDirPath+"template.html"));
+            String htmlString = getFileContent(this.htmlDirPath+"template.html");
             //Initialisation des variables avec le contenu à ajouter
             String title = "Accueil";
             
