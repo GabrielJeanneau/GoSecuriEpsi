@@ -44,24 +44,21 @@ public class Agent {
     public String generateAgentFile(){
         String res = "";
         Generator generator = new Generator();
-          try{
-                //Récupération du template html
-                String htmlString = generator.getFileContent(this.htmlDirPath+"agentFileBody.html");
+          
+        //Récupération du template html
+        String htmlString = generator.getFileContent(this.htmlDirPath+"agentFileBody.html");
 
-                //Initialisation des variables avec le contenu à ajouter
-                String identity = this.getIdentity();
-                String photo = this.photoPath;
+        //Initialisation des variables avec le contenu à ajouter
+        String identity = this.getIdentity();
+        String photo = this.photoPath;
 
-                //Ajoute le contenu dans la page Html
-                htmlString = htmlString.replace("$mission",this.mission);
-                htmlString = htmlString.replace("$identity", identity);
-                htmlString = htmlString.replace("$photo", photo);
-                
-                res = htmlString;
-            }
-            catch(IOException e){
-                e.printStackTrace();
-            }
+        //Ajoute le contenu dans la page Html
+        htmlString = htmlString.replace("$mission",this.mission);
+        htmlString = htmlString.replace("$identity", identity);
+        htmlString = htmlString.replace("$photo", photo);
+
+        res = htmlString;
+
         return res;
     }
 
