@@ -41,7 +41,7 @@ public class Agent {
         this.stuffList = stuffList;
     }
     
-    public String generateAgentFile(){
+    public String generateAgentFile() throws IOException {
         String res = "";
         Generator generator = new Generator();
           
