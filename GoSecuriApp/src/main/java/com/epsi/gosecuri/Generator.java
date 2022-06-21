@@ -343,16 +343,12 @@ public class Generator {
             e.printStackTrace();
         }
     }
-    public void writeFile(String fileName, String content) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, false));
-        writer.append(content);
-        writer.close();
-    }
     
     private void initHtpasswd(){
         String line = "admin"+":{SHA}"+Base64.getEncoder().encodeToString(DigestUtils.sha1("admin"));
         try {
-            Files.write(this.generatedFilesDirPath+".htpasswd",line.getBytes());
+            //Files.writeString(Paths.get(this.generatedFilesDirPath+".htpasswd"),line+"\n");
+            BufferedWriter output = new BufferedWriter(new FileWriter(this.generatedFilesDirPath+".htpasswd",true));
         } catch (IOException ex) {
             Logger.getLogger(Generator.class.getName()).log(Level.SEVERE, null, ex);
         }
