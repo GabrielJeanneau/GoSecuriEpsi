@@ -140,7 +140,7 @@ public class Generator {
         for(Agent agent:this.agentList){
             try{
                 //Récupération du template html
-                String htmlString = Files.readString(Paths.get(this.htmlDirPath+"template.html"));
+                String htmlString = getFileContent(this.htmlDirPath+"template.html");
 
                 //Initialisation des variables avec le contenu à ajouter
                 String title = agent.getIdentity()+" - Fiche agent";
@@ -347,7 +347,7 @@ public class Generator {
     private void initHtpasswd(){
         String line = "admin"+":{SHA}"+Base64.getEncoder().encodeToString(DigestUtils.sha1("admin"));
         try {
-            Files.writeString(Paths.get(this.generatedFilesDirPath+".htpasswd"),line+"\n");
+            Files.writeString(this.generatedFilesDirPath+".htpasswd",line+"\n");
         } catch (IOException ex) {
             Logger.getLogger(Generator.class.getName()).log(Level.SEVERE, null, ex);
         }
