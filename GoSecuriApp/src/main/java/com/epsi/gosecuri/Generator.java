@@ -176,7 +176,7 @@ public class Generator {
      * @param agent
      * @return 
      */
-    private String createAndLoadStuffList(Agent agent){
+    private String createAndLoadStuffList(Agent agent) throws IOException{
         String htmlString=agent.generateAgentFile();
         ArrayList<String> agentStuffList = agent.getStuffList();
         String stuffList="<ul>";
