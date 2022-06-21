@@ -55,13 +55,38 @@ public class Generator {
     /**
      * Créer la page d'accueil.
      */
+    public String getFileContent(String fileName){
+        StringBuilder res = new StringBuilder();
+        try
+        {
+            File file = new File(fileName);
+            if(!file.exists()){
+                file.createNewFile();
+            }
+            FileReader fr = new FileReader(file);
+            BufferedReader br = new BufferedReader(fr);
+            String line;
+
+            while((line = br.readLine()) != null)
+            {
+                res.append(line.trim()).append("\n");
+            }
+            fr.close();
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+        return res.toString();
+    }
+    
     private void createHomePage(){
         try{
             //Récupération du template html
             //File htmlTemplateFile = new File(this.htmlDirPath+"template.html");
             //String htmlString = FileUtils.readFileToString(htmlTemplateFile);
-            //String htmlString = Files.readString(Paths.get(this.htmlDirPath+"template.html"));
-            String htmlString = Files.readString(Path.of(this.htmlDirPath+"template.html"));
+            //Path file = Paths.get(this.htmlDirPath+"template.html");
+            String htmlString = Files.readString(getFileContent(this.htmlDirPath+"template.html"));
             //Initialisation des variables avec le contenu à ajouter
             String title = "Accueil";
             
