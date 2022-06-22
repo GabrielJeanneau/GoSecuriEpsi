@@ -12,10 +12,6 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import org.apache.commons.io.FileUtils;
 
-/**
- *
- * @author loicb
- */
 public class Agent {
     
     private String nom;
