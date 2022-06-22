@@ -7,10 +7,6 @@ package com.epsi.gosecuri;
 
 import java.io.IOException;
 
-/**
- *
- * @author loicb
- */
 public class App {
     
     public static void main (String[] args) throws IOException{
