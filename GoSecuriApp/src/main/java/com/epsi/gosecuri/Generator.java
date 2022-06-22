@@ -26,10 +26,6 @@ import java.util.logging.Logger;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.io.FileUtils;
 
-/**
- *
- * @author loicb
- */
 public class Generator {
     
     //Chemin relatif pour le dossier ressource
